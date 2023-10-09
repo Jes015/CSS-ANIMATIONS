@@ -1,15 +1,15 @@
 {
-  "name": "css-animations",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "description": "",
   "devDependencies": {
     "parcel": "2.9.3"
-  }
+  },
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "css-animations",
+  "scripts": {
+    "scroll": "INDEX=index pnpm parcel apps/scroll-driven-animations/$INDEX"
+  },
+  "version": "1.0.0"
 }

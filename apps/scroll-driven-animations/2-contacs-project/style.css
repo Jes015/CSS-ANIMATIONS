@@ -1,0 +1,107 @@
+body {
+    display: grid;
+    place-items: center;
+    background-color: #f9f9f9;
+    color: rgb(65, 65, 65);
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+svg {
+    color: rgb(65, 65, 65);
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.contacts {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+}
+
+.contacts__wrap {
+    height: 80vh;
+    overflow-y: scroll;
+    scroll-timeline-name: --contacts-e;
+    scroll-timeline-axis: block;
+}
+
+.contact {
+    padding: 1em 20em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    animation: contact-in linear, contact-out linear;
+    animation-duration: auto;
+    animation-timeline: view();
+    animation-range: entry, exit;
+}
+
+.contact__icon {
+    width: 3em;
+    color: rgb(44, 44, 44);
+    height: 3em;
+}
+
+.contact__main {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: -0.35em;
+}
+
+.contact__title {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.contact__role {
+    font-size: 0.7em;
+}
+
+.progress {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 0%;
+    height: 8px;
+    background-color: rgb(24, 24, 24);
+    animation: progress-bar linear;
+    animation-duration: auto;
+    animation-timeline: --contacts-e;
+}
+
+@keyframes progress-bar {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes contact-in {
+    from {
+        background-color: rgb(105, 105, 105);
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes contact-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        background-color: rgb(105, 105, 105);
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
