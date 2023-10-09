@@ -1,0 +1,47 @@
+body {
+    position: relative;
+    background-color: rgb(15,15,15);
+    white-space: nowrap;
+}
+
+img {
+    display: inline-block;
+    scroll-snap-type: start;
+    width: 20%;
+    aspect-ratio: 3/4;
+    -webkit-box-reflect: below 0.5em linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.25));
+    perspective: 400em;
+    animation-timeline: view(root);
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: blue;
+    height: 5px;
+    animation: re-scale linear;
+    animation-duration: auto;
+    animation-timeline: scroll(root x);
+}
+
+@keyframes rotate3d {
+    to {}
+}
+
+@keyframes re-scale {
+    to {
+        width: 100%;
+    }
+}
+@keyframes move-background {
+    from {
+        background-position: 50% 0%;
+    }
+
+    to {
+        filter: blur(10px);
+        background-position: 50% 100%;
+    }
+}
