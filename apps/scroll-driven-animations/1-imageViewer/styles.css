@@ -1,47 +1,51 @@
 body {
+    background-color: rgba(15, 15, 15);
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.gallery {
     position: relative;
-    background-color: rgb(15,15,15);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery__scrollcontainer {
     white-space: nowrap;
+    overflow: scroll hidden;
+    height: 90%;
+    scroll-timeline-name: --gallery-scroll;
+    scroll-timeline-axis: inline;
+}
+
+.gallery__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    animation: linear adjust-progress;
+    animation-duration: auto;
+    animation-timeline: --gallery-scroll;
+    width: 0%;
+    height: 10px;
+    z-index: 200;
+}
+
+
+.gallery__entry {
+    display: inline-block;
+    
 }
 
 img {
-    display: inline-block;
-    scroll-snap-type: start;
-    width: 20%;
-    aspect-ratio: 3/4;
     -webkit-box-reflect: below 0.5em linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.25));
-    perspective: 400em;
-    animation-timeline: view(root);
 }
 
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    background-color: blue;
-    height: 5px;
-    animation: re-scale linear;
-    animation-duration: auto;
-    animation-timeline: scroll(root x);
-}
+@keyframes adjust-progress {
 
-@keyframes rotate3d {
-    to {}
-}
-
-@keyframes re-scale {
     to {
         width: 100%;
-    }
-}
-@keyframes move-background {
-    from {
-        background-position: 50% 0%;
-    }
-
-    to {
-        filter: blur(10px);
-        background-position: 50% 100%;
     }
 }
