@@ -40,10 +40,10 @@ body {
     height: auto;
     display: inline-block;
     animation: animate-in linear forwards;
+    perspective: 400em;
     animation-duration: auto;
     animation-timeline: view(inline);
     animation-range: cover 0% cover 20%;
-
 }
 
 img {
@@ -61,11 +61,12 @@ img {
     from {
         opacity: 0;
         clip-path: inset(50% 0% 50% 0%);
+        rotate: 30deg;
     }
 
     to {
-        scale: 1.3;
         opacity: 1;
         clip-path: inset(0% 0% 0% 0%);
+        rotate: 0deg;
     }
 }
