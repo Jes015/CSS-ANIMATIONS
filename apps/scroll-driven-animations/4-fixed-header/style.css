@@ -1,0 +1,38 @@
+body {
+    padding-top: 100vh;
+    padding-top: 100dvh;
+    background-color: rgb(17, 17, 17);
+    color: white;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=900&t=st=1698264761~exp=1698265361~hmac=5d398330ae5d90a5bbe921dd7bb8a4da0f800da72a936a98835b2048550b46ea);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: black;
+    color: white;
+    animation: header-animation linear forwards;
+    animation-duration: auto;
+    animation-timeline: scroll(nearest block);
+    animation-range: 0vh 90vh;
+}
+
+@keyframes header-animation {
+    50% {
+        background-position: 0 60%;
+    }
+    to {
+        height: 10vh;
+        height: 10dvh;
+        background-position: 0 5%;
+    }
+}
