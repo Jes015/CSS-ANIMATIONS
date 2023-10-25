@@ -1,0 +1,88 @@
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 100vw;
+}
+
+.progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 0.5em;
+    background-color: rebeccapurple;
+    animation: linear progress-bar;
+    animation-duration: auto;
+    animation-timeline: --carousel-progress;
+}
+
+.carousel {
+    padding-block: 10em;
+    padding-inline: 25em;
+    white-space: nowrap;
+    overflow-x: scroll;
+    scroll-timeline-name: --carousel-progress;
+    scroll-timeline-axis: inline;
+}
+
+.carousel__item {
+    display: inline-block;
+
+    animation: adjust-z-index linear both;
+    animation-duration: auto;
+    animation-timeline: view(inline);
+    animation-range: cover;
+    perspective: 400px;
+}
+
+.carousel__image {
+    width: 200px;
+    height: 200px;
+    -webkit-box-reflect: below 0.5em linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.25));
+    animation: rotate-image linear;
+    animation-duration: auto;
+    animation-timeline: view(inline);
+    animation-range: cover;
+}
+
+@keyframes progress-bar {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes rotate-image {
+    0% {
+        transform: translateX(-100%) rotateY(-45deg);
+    }
+
+    35% {
+        transform: translateX(0) rotateY(-45deg);
+    }
+
+    50% {
+        transform: rotateY(0deg) translateZ(1em) scale(1.5);
+    }
+
+    65% {
+        transform: translateX(0) rotateY(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotateY(45deg);
+    }
+}
+
+@keyframes adjust-z-index {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		z-index: 100; /* When at the center, be on top */
+	}
+	100% {
+		z-index: 1;
+	}
+}
