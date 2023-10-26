@@ -3,6 +3,7 @@ body {
 }
 
 .container {
+    timeline-scope: --carousel-progress;
     max-width: 100vw;
 }
 
@@ -13,7 +14,7 @@ body {
     width: 0%;
     height: 0.5em;
     background-color: rebeccapurple;
-    animation: linear progress-bar;
+    animation: linear progress-bar forwards;
     animation-duration: auto;
     animation-timeline: --carousel-progress;
 }
@@ -23,8 +24,7 @@ body {
     padding-inline: 25em;
     white-space: nowrap;
     overflow-x: scroll;
-    scroll-timeline-name: --carousel-progress;
-    scroll-timeline-axis: inline;
+    scroll-timeline: --carousel-progress inline;
 }
 
 .carousel__item {

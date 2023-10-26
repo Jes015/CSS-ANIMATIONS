@@ -1,0 +1,96 @@
+body {
+    padding-inline: 10em;
+    background-color: rgb(58 29 43);
+    color: white;
+}
+
+h1 {
+    line-height: 0.9em;
+}
+
+h1, p {
+    padding: 0;
+    margin: 0;
+}
+
+.presentation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    height: 80dvh;
+    font-size: 5em;
+}
+
+.cards-section {
+    position: relative;
+
+    view-timeline-name: --cards-timeline;
+}
+
+.card {
+    margin: 3em 0em;
+    background-color: white;
+    color: black;
+    display: flex;
+    gap: 0.8em;
+    
+    align-items: start;
+    
+    width: 100%;
+    border-radius: 1em;
+    padding: 1.5em 1em;
+    border: 0.1em solid rgb(150, 150, 150);
+
+}
+
+.card__wrapper  {
+    position: sticky;
+    top: var(--top);
+    animation: scale-item linear forwards;
+    animation-duration: auto;
+    animation-timeline: view();
+    animation-range: entry 100% exit 95%;
+}
+
+.card__title {
+    font-size: 3.4em;
+    font-weight: 300;
+}
+
+.card__description {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.card__button {
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    border: transparent 0.1em solid;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.card__button:hover {
+    background-color: rgb(26, 26, 26);
+}
+
+.card__image {
+    width: 100%;
+    height: 10em;
+    flex-grow: 1;
+    background-color: black;
+}
+
+.card > * {
+    flex-grow: 2;
+}
+
+@keyframes scale-item {
+    to {
+        scale: var(--scale);
+    }
+}
